@@ -7,21 +7,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             background-image: url('bg.jpg'); /* Replace with your background image URL */
-            text-align: center;
-            background-repeat: no-repeat;
             background-size: cover; /* This will ensure the background image covers the entire screen */
-            width: 720px;
-            height: 1280px;
-            margin: 0 auto;
-            background-color: #f0f0f0;
+            background-position: center;
             font-family: Arial, sans-serif;
             overflow: hidden;
-            background-position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
         #message {
             font-size: 2em;
@@ -44,10 +47,12 @@
     </style>
 </head>
 <body>
-    <div id="message"></div>
-    <div class="gifs">
-        <img src="srr.gif" alt="GIF 1"> <!-- Replace with your first GIF URL -->
-        <img src="sorry.gif" alt="GIF 2"> <!-- Replace with your second GIF URL -->
+    <div class="content">
+        <div id="message"></div>
+        <div class="gifs">
+            <img src="srr.gif" alt="GIF 1"> <!-- Replace with your first GIF URL -->
+            <img src="sorry.gif" alt="GIF 2"> <!-- Replace with your second GIF URL -->
+        </div>
     </div>
     
     <audio id="background-music" src="sorry.mp3" autoplay loop></audio>
