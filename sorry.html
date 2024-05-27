@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('bg.jpg'); /* Replace with your background image URL */
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #message {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: crimson;
+            text-shadow: 1px 1px 1px black;
+            font-weight: bold;
+            font-family: 'Nanum Brush Script';
+        }
+        .gifs {
+            display: flex;
+            gap: 50px;
+            margin-top: 60px;
+        }
+        .gifs img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+    <div class="gifs">
+        <img src="srr.gif" alt="GIF 1"> <!-- Replace with your first GIF URL -->
+        <img src="sorry.gif" alt="GIF 2"> <!-- Replace with your second GIF URL -->
+    </div>
+    
+    <audio id="background-music" src="sorry.mp3" autoplay loop></audio>
+
+    <script>
+        const message = "I AM SORRY..I AM REALLY SORRY FOR WHAT I HAVE DONE. I AM REALLY ASHAMED OF ME. I WON'T HURT YOU AGAIN.";
+        let i = 0;
+        const speed = 100; // Speed of letter display in milliseconds
+
+        function typeWriter() {
+            if (i < message.length) {
+                document.getElementById("message").innerHTML += message.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
